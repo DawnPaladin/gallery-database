@@ -20,7 +20,7 @@ class TagsController < ApplicationController
     if @tag.save
       render json: @tag, status: :created, location: @tag
     else
-      render json: @tag.errors, status: :unprocessable_entity
+      render json: @tag.errors.full_messages, status: :unprocessable_entity
     end
   end
 
